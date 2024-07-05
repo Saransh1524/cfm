@@ -5,6 +5,7 @@ import Toast from "../../components/Toast";
 import { ShowToastContext } from "../../context/ShowToastContext";
 import { useState } from "react";
 import { ParentFolderIdContext } from "../../context/ParentFolderIdContext";
+import Storage from "../../components/Storage/Storage";
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
@@ -20,7 +21,7 @@ export default function App({
       <div className="grid grid-cols-1 md:grid-cols-3 w-full ">
       <div className="col-span-2 bg-sky-200">
       <Component {...pageProps} /></div>
-      <div className="bg-white p-5">Storage</div>
+      <div className="bg-white p-5 order-first md:order-last"><Storage/></div>
       </div>
       </div>
       {ShowToastMsg?<Toast msg = {ShowToastMsg}/>:null}
